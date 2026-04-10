@@ -1,6 +1,12 @@
 import { useRouter } from "next/router";
-import { useState, useEffect } from "react";
-import { useRadioGroup, Flex, Text, Button } from "@chakra-ui/react";
+import { useEffect } from "react";
+import {
+  useRadioGroup,
+  Flex,
+  Text,
+  Button,
+  Box,
+} from "@chakra-ui/react";
 
 import TestProgress from "./test-progress";
 import TestAnswerOption from "./test-answer-option";
@@ -13,71 +19,97 @@ import {
 } from "../../lib/personality-test";
 import useUserTestAnswersStore from "../../store/use-user-test-answers";
 
+function TestQuestionBlock({ questionIndex }: { questionIndex: number }) {
+  const question = personalityTest[questionIndex];
+  const { userTestAnswers, setUserTestAnswers } = useUserTestAnswersStore();
+  const selected = userTestAnswers[questionIndex];
+
+  const { getRootProps, getRadioProps, setValue } = useRadioGroup({
+    name: `answer-${questionIndex}`,
+    defaultValue: selected ?? "",
+    onChange: (value) => {
+      setUserTestAnswers(
+        personalityTest.map((_, idx) =>
+          idx === questionIndex
+            ? (value as TestAnswer["type"])
+            : userTestAnswers[idx]
+        )
+      );
+    },
+  });
+
+  useEffect(() => {
+    setValue(selected ?? "");
+  }, [selected, setValue]);
+
+  const group = getRootProps();
+
+  return (
+    <Box
+      as="section"
+      py={6}
+      borderBottomWidth="1px"
+      borderColor="gray.200"
+      _last={{ borderBottomWidth: 0 }}
+      scrollMarginTop="5rem"
+    >
+      <Text
+        fontWeight="bold"
+        color="gray.600"
+      >
+        #{questionIndex + 1}
+      </Text>
+      <Text
+        fontSize="lg"
+        mb={4}
+      >
+        {question.question}
+      </Text>
+      <Flex
+        w="full"
+        gap={4}
+        direction="column"
+        {...group}
+      >
+        {question.answerOptions.map((answerOption) => {
+          const radio = getRadioProps({ value: answerOption.type });
+
+          return (
+            <TestAnswerOption
+              key={answerOption.type}
+              {...radio}
+            >
+              {answerOption.answer}
+            </TestAnswerOption>
+          );
+        })}
+      </Flex>
+    </Box>
+  );
+}
+
 export default function TestQuestion() {
   const router = useRouter();
 
   const { userTestAnswers, setUserTestAnswers } = useUserTestAnswersStore();
 
-  const [currentPersonalityTestIndex, setCurrentPersonalityTestIndex] =
-    useState(0);
-
-  const isUserAlreadyPickAnswer =
-    userTestAnswers[currentPersonalityTestIndex] !== undefined;
-
-  const { getRootProps, getRadioProps, setValue } = useRadioGroup({
-    name: "answer",
-    defaultValue: userTestAnswers[currentPersonalityTestIndex],
-    onChange: (value) => {
-      const newUserTestAnswers = [...userTestAnswers];
-
-      newUserTestAnswers[currentPersonalityTestIndex] =
-        value as TestAnswer["type"];
-
-      setUserTestAnswers(newUserTestAnswers);
-
-      handleNextButtonClick();
-    },
-  });
-
-  const group = getRootProps();
-
-  useEffect(() => {
-    if (userTestAnswers[currentPersonalityTestIndex] === undefined) {
-      setValue("");
-      return;
-    }
-
-    setValue(userTestAnswers[currentPersonalityTestIndex]);
-  }, [currentPersonalityTestIndex, userTestAnswers, setValue]);
-
-  function handleNextButtonClick() {
-    setCurrentPersonalityTestIndex((currentPersonalityTestIndex) => {
-      if (currentPersonalityTestIndex + 1 > personalityTest.length - 1) {
-        return currentPersonalityTestIndex;
-      }
-
-      return currentPersonalityTestIndex + 1;
-    });
-  }
-
-  function handlePreviousButtonClick() {
-    setCurrentPersonalityTestIndex((currentPersonalityTestIndex) => {
-      if (currentPersonalityTestIndex - 1 < 0) {
-        return currentPersonalityTestIndex;
-      }
-
-      return currentPersonalityTestIndex - 1;
-    });
-  }
+  const allAnswered = personalityTest.every(
+    (_, i) => userTestAnswers[i] !== undefined
+  );
 
   function handleSeeResultButtonClick() {
+    if (!allAnswered) return;
+
     const timestamp = Date.now();
-    const testScores = userTestAnswers.map((answer, index) =>
-      getQuestionAnswerScore(index + 1, answer)
+    const testAnswers = personalityTest.map(
+      (_, i) => userTestAnswers[i] as TestAnswer["type"]
+    );
+    const testScores = personalityTest.map((_, index) =>
+      getQuestionAnswerScore(index + 1, testAnswers[index])
     );
 
     saveTestResult({
-      testAnswers: userTestAnswers,
+      testAnswers,
       testScores,
       timestamp,
     })
@@ -96,86 +128,54 @@ export default function TestQuestion() {
     <Flex
       py={4}
       w="full"
-      h="full"
-      gap={8}
+      gap={6}
       direction="column"
-      justifyContent="space-between"
-      alignItems="center"
+      alignItems="stretch"
     >
-      <TestProgress />
-      <Flex direction="column">
-        <Text
-          fontWeight="bold"
-          align="center"
-        >
-          #{currentPersonalityTestIndex + 1}
-        </Text>
-        <Text
-          fontSize="lg"
-          align="center"
-        >
-          {personalityTest[currentPersonalityTestIndex].question}
-        </Text>
-      </Flex>
-      <Flex
-        w="full"
-        gap={4}
-        direction="column"
-        {...group}
+      <Box
+        position="sticky"
+        top={0}
+        zIndex={1}
+        bg="white"
+        pt={2}
+        pb={3}
+        borderBottomWidth="1px"
+        borderColor="gray.100"
       >
-        {personalityTest[currentPersonalityTestIndex].answerOptions.map(
-          (answerOption) => {
-            const radio = getRadioProps({ value: answerOption.type });
+        <TestProgress />
+      </Box>
 
-            return (
-              <TestAnswerOption
-                key={answerOption.type}
-                {...radio}
-              >
-                {answerOption.answer}
-              </TestAnswerOption>
-            );
-          }
-        )}
-      </Flex>
       <Flex
-        direction="row"
+        direction="column"
         w="full"
-        gap={4}
+      >
+        {personalityTest.map((_, questionIndex) => (
+          <TestQuestionBlock
+            key={questionIndex}
+            questionIndex={questionIndex}
+          />
+        ))}
+      </Flex>
+
+      <Box
+        position="sticky"
+        bottom={0}
+        zIndex={1}
+        bg="white"
+        pt={3}
+        pb={2}
+        borderTopWidth="1px"
+        borderColor="gray.100"
       >
         <Button
           w="full"
-          variant="outline"
-          {...(currentPersonalityTestIndex === 0 && {
-            disabled: true,
-          })}
-          onClick={handlePreviousButtonClick}
+          colorScheme="primary"
+          isDisabled={!allAnswered}
+          onClick={handleSeeResultButtonClick}
         >
-          Previous
+          See Result
         </Button>
-        {isUserAlreadyPickAnswer &&
-        currentPersonalityTestIndex === personalityTest.length - 1 ? (
-          <Button
-            w="full"
-            colorScheme="primary"
-            onClick={handleSeeResultButtonClick}
-          >
-            See Result
-          </Button>
-        ) : (
-          <Button
-            w="full"
-            colorScheme="primary"
-            variant="outline"
-            {...(!isUserAlreadyPickAnswer && {
-              disabled: true,
-            })}
-            onClick={handleNextButtonClick}
-          >
-            Next
-          </Button>
-        )}
-      </Flex>
+      </Box>
     </Flex>
   );
 }

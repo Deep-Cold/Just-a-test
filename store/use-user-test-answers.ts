@@ -3,8 +3,10 @@ import { create } from "zustand";
 import { TestAnswerOption } from "../lib/personality-test";
 
 interface UserTestAnswersState {
-  userTestAnswers: TestAnswerOption["type"][];
-  setUserTestAnswers: (newUserTestAnswers: TestAnswerOption["type"][]) => void;
+  userTestAnswers: (TestAnswerOption["type"] | undefined)[];
+  setUserTestAnswers: (
+    newUserTestAnswers: (TestAnswerOption["type"] | undefined)[]
+  ) => void;
 }
 
 const useUserTestAnswersStore = create<UserTestAnswersState>((set) => ({

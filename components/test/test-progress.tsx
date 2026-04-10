@@ -6,7 +6,10 @@ import useUserTestAnswersStore from "../../store/use-user-test-answers";
 export default function TestProgress() {
   const { userTestAnswers } = useUserTestAnswersStore();
 
-  const progress = (userTestAnswers.length / personalityTest.length) * 100;
+  const answeredCount = personalityTest.filter(
+    (_, i) => userTestAnswers[i] !== undefined
+  ).length;
+  const progress = (answeredCount / personalityTest.length) * 100;
 
   return (
     <Progress
