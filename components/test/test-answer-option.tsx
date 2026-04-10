@@ -1,9 +1,9 @@
 import { useRadio, Box } from "@chakra-ui/react";
 
 export default function TestAnswerOption(props: any) {
-  const { getInputProps, getCheckboxProps } = useRadio(props);
+  const { getInputProps, getRadioProps } = useRadio(props);
   const input = getInputProps();
-  const checkbox = getCheckboxProps();
+  const radio = getRadioProps();
 
   return (
     <Box
@@ -26,7 +26,7 @@ export default function TestAnswerOption(props: any) {
         _focus={{
           boxShadow: "outline",
         }}
-        {...checkbox}
+        {...radio}
       >
         {props.children}
       </Box>

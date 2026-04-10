@@ -22,7 +22,7 @@ export default function TestResultTableOfContent() {
       })
     );
 
-    setHeadings(elements);
+    queueMicrotask(() => setHeadings(elements));
   }, []);
 
   function handleTableOfContentLinkClick(

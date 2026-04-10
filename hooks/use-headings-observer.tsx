@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect } from "react";
 
 export default function useHeadingsObserver() {
-  const observer = useRef<IntersectionObserver>();
+  const observer = useRef<IntersectionObserver | null>(null);
   const [activeId, setActiveId] = useState("");
 
   useEffect(() => {
