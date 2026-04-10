@@ -1,6 +1,7 @@
 import { Flex, Button } from "@chakra-ui/react";
 import { RiInformationLine } from "react-icons/ri";
 
+import { useT } from "../../lib/locale-context";
 import TestTimer from "./test-timer";
 
 interface TestMenuProps {
@@ -8,6 +9,8 @@ interface TestMenuProps {
 }
 
 export default function TestMenu(props: TestMenuProps) {
+  const t = useT();
+
   return (
     <Flex
       width="full"
@@ -20,12 +23,12 @@ export default function TestMenu(props: TestMenuProps) {
     >
       <Flex>
         <Button
-          aria-label="instructions"
+          aria-label={t("testInstructionsAria")}
           variant="outline"
           leftIcon={<RiInformationLine size={24} />}
           onClick={props.onShowInstructionsButtonClick}
         >
-          Instructions
+          {t("testInstructions")}
         </Button>
         <TestTimer />
       </Flex>

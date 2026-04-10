@@ -20,6 +20,7 @@ import {
   isScoredQuestion,
   saveTestResult,
 } from "../../lib/personality-test";
+import { useLocalizeBody, useT } from "../../lib/locale-context";
 import useUserTestAnswersStore from "../../store/use-user-test-answers";
 
 function shuffleArrayInPlace<T>(arr: T[]): T[] {
@@ -59,6 +60,7 @@ function TestQuestionBlock({
   const question = personalityTest[questionIndex];
   const { userTestAnswers, setUserTestAnswers } = useUserTestAnswersStore();
   const selected = userTestAnswers[questionIndex];
+  const localizeBody = useLocalizeBody();
 
   const { getRootProps, getRadioProps, setValue } = useRadioGroup({
     name: `answer-${questionIndex}`,
@@ -79,6 +81,7 @@ function TestQuestionBlock({
   }, [selected, setValue]);
 
   const group = getRootProps();
+  const qText = localizeBody(question.question);
 
   return (
     <Box
@@ -110,7 +113,7 @@ function TestQuestionBlock({
           textAlign="left"
           w="full"
         >
-          {question.question}
+          {qText}
         </Text>
         {question.supportFormUrl ? (
           <Link
@@ -141,7 +144,7 @@ function TestQuestionBlock({
               key={answerOption.type}
               {...radio}
             >
-              {answerOption.answer}
+              {localizeBody(answerOption.answer)}
             </TestAnswerOption>
           );
         })}
@@ -152,6 +155,7 @@ function TestQuestionBlock({
 
 export default function TestQuestion() {
   const router = useRouter();
+  const t = useT();
 
   const { userTestAnswers, setUserTestAnswers } = useUserTestAnswersStore();
 
@@ -236,7 +240,7 @@ export default function TestQuestion() {
             size="xl"
             color="primary.500"
             thickness="4px"
-            label="加载题目与选项顺序"
+            label={t("testLoadingLayout")}
           />
         ) : (
           <>
@@ -281,7 +285,7 @@ export default function TestQuestion() {
           isDisabled={!allAnswered}
           onClick={handleSeeResultButtonClick}
         >
-          See Result
+          {t("testSeeResult")}
         </Button>
       </Box>
     </Flex>

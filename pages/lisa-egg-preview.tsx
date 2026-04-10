@@ -5,6 +5,7 @@ import { Flex, Text } from "@chakra-ui/react";
 import MainLayout from "../components/layouts/main-layout";
 import LisaEasterEggBanner from "../components/test/lisa-easter-egg-banner";
 import { isLisaEggPreviewEnabled } from "../lib/lisa-egg-preview-env";
+import { useT } from "../lib/locale-context";
 
 /**
  * 静态预览：今井莉莎隐藏彩蛋横幅的实际样式（无需完成答题路径）。
@@ -18,10 +19,12 @@ export const getStaticProps: GetStaticProps = () => {
 };
 
 export default function LisaEggPreviewPage() {
+  const t = useT();
+
   return (
     <MainLayout>
       <Head>
-        <title>彩蛋预览 · 理大音游人格测试设计</title>
+        <title>{t("lisaPreviewDocTitle")}</title>
       </Head>
       <Flex
         direction="column"
@@ -35,7 +38,7 @@ export default function LisaEggPreviewPage() {
           fontSize="sm"
           color="gray.600"
         >
-          下方为解锁「今井莉莎限定评价」后在结果页中插入的区块样式预览（与真实解锁时一致）。
+          {t("lisaPreviewIntro")}
         </Text>
         <LisaEasterEggBanner />
       </Flex>

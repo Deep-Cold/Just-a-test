@@ -1,6 +1,10 @@
 import { Flex, Text, Link } from "@chakra-ui/react";
 
+import { useT } from "../../lib/locale-context";
+
 export default function Footer() {
+  const t = useT();
+
   return (
     <Flex
       as="footer"
@@ -16,7 +20,7 @@ export default function Footer() {
       textAlign="center"
     >
       <Text fontSize="sm">
-        🔨 Made by{" "}
+        🔨 {t("footerMadeBy")}{" "}
         <Link
           href="https://github.com/Deep-Cold"
           isExternal
@@ -25,7 +29,7 @@ export default function Footer() {
         >
           Deep-Cold
         </Link>{" "}
-        and{" "}
+        {t("footerAnd")}{" "}
         <Link
           href="https://github.com/shiguangWilliam"
           isExternal
@@ -34,7 +38,7 @@ export default function Footer() {
         >
           shiguangWilliam
         </Link>{" "}
-        based on the work of{" "}
+        {t("footerBasedOn")}{" "}
         <Link
           href="https://github.com/rauf-21"
           isExternal
@@ -43,6 +47,7 @@ export default function Footer() {
         >
           rauf-21
         </Link>
+        {t("footerWork")}
       </Text>
     </Flex>
   );

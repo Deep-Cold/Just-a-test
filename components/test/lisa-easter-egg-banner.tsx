@@ -1,12 +1,15 @@
-import { useRouter } from "next/router";
 import { Box, Image, Text } from "@chakra-ui/react";
+import { useRouter } from "next/router";
 
 import { LISA_IMAI_EASTER_EGG_QUOTE } from "../../lib/lisa-easter-egg";
+import { useLocalizeBody, useT } from "../../lib/locale-context";
 
 /** 解锁今井莉莎隐藏彩蛋时，在结果页展示的横幅 */
 export default function LisaEasterEggBanner() {
   const { basePath } = useRouter();
-  const imageSrc = `${basePath}/images/mbti/lisa.png`;
+  const t = useT();
+  const localizeBody = useLocalizeBody();
+  const imageSrc = `${basePath}/images/mbti/lisa!!!.png`;
 
   return (
     <Box
@@ -28,7 +31,7 @@ export default function LisaEasterEggBanner() {
       >
         <Image
           src={imageSrc}
-          alt="今井莉莎（BanG Dream!）"
+          alt={t("lisaImageAlt")}
           w="full"
           maxH={{ base: "220px", sm: "280px" }}
           objectFit="contain"
@@ -42,7 +45,7 @@ export default function LisaEasterEggBanner() {
         letterSpacing="wider"
         mb={2}
       >
-        隐藏彩蛋 · 今井莉莎限定评价
+        {t("lisaEggBadge")}
       </Text>
       <Text
         fontSize="md"
@@ -50,7 +53,7 @@ export default function LisaEasterEggBanner() {
         color="gray.800"
         fontStyle="italic"
       >
-        {LISA_IMAI_EASTER_EGG_QUOTE}
+        {localizeBody(LISA_IMAI_EASTER_EGG_QUOTE)}
       </Text>
     </Box>
   );

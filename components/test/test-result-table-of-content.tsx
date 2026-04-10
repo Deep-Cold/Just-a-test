@@ -3,9 +3,12 @@ import { MouseEvent, useState, useEffect } from "react";
 import { Flex, Text, UnorderedList, ListItem } from "@chakra-ui/react";
 
 import useHeadingsObserver from "../../hooks/use-headings-observer";
+import { useLocale, useT } from "../../lib/locale-context";
 
 export default function TestResultTableOfContent() {
   const { activeId, setActiveId } = useHeadingsObserver();
+  const t = useT();
+  const { locale } = useLocale();
 
   const [headings, setHeadings] = useState<
     {
@@ -23,7 +26,7 @@ export default function TestResultTableOfContent() {
     );
 
     queueMicrotask(() => setHeadings(elements));
-  }, []);
+  }, [locale]);
 
   function handleTableOfContentLinkClick(
     event: MouseEvent<HTMLLIElement, globalThis.MouseEvent>,
@@ -48,7 +51,7 @@ export default function TestResultTableOfContent() {
       pos="sticky"
       alignSelf="flex-start"
     >
-      <Text fontWeight="bold">目录</Text>
+      <Text fontWeight="bold">{t("tocTitle")}</Text>
       <UnorderedList
         spacing={2}
         listStyleType="none"

@@ -2,12 +2,15 @@ import type { AppProps } from "next/app";
 import { ChakraProvider } from "@chakra-ui/react";
 import "@fontsource/poppins/400.css";
 
+import { LocaleProvider } from "../lib/locale-context";
 import theme from "../theme";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={theme}>
-      <Component {...pageProps} />
+      <LocaleProvider>
+        <Component {...pageProps} />
+      </LocaleProvider>
     </ChakraProvider>
   );
 }

@@ -3,7 +3,7 @@ import { ColorModeScript } from "@chakra-ui/react";
 
 export default function Document() {
   return (
-    <Html lang="en">
+    <Html lang="zh-Hans">
       <Head />
       <body>
         <ColorModeScript initialColorMode="light" />

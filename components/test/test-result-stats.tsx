@@ -18,9 +18,22 @@ import {
 
 import { personalityClasses } from "../../data/personality-classes";
 import { PersonalityClass, TestResult } from "../../lib/personality-test";
+import { useT } from "../../lib/locale-context";
+import type { UiStringKey } from "../../lib/ui-strings";
 
 const RADAR_STROKE = "#3498db";
 const RADAR_FILL = "#3498db";
+
+const DIM_KEY: Record<PersonalityClass["type"], UiStringKey> = {
+  P: "dimP",
+  E: "dimE",
+  S: "dimS",
+  M: "dimM",
+  A: "dimA",
+  I: "dimI",
+  C: "dimC",
+  B: "dimB",
+};
 
 interface TestResultStatsProps {
   testResult: TestResult;
@@ -28,10 +41,8 @@ interface TestResultStatsProps {
 
 type RadarRow = {
   axis: PersonalityClass["type"];
-  /** 维度说明（与题库 personality-classes 一致） */
   description: string;
   count: number;
-  /** 与该轴对立面在同一组内的题目数之和（分母） */
   pairTotal: number;
   percent: number;
 };
@@ -40,7 +51,10 @@ function pctWithinPair(count: number, pairTotal: number): number {
   return pairTotal > 0 ? (count / pairTotal) * 100 : 0;
 }
 
-function buildRadarRows(testScores: PersonalityClass["type"][]): RadarRow[] {
+function buildRadarRows(
+  testScores: PersonalityClass["type"][],
+  describe: (letter: PersonalityClass["type"]) => string
+): RadarRow[] {
   const counts = new Map<PersonalityClass["type"], number>();
   for (const pc of personalityClasses) {
     counts.set(pc.type, 0);
@@ -79,7 +93,7 @@ function buildRadarRows(testScores: PersonalityClass["type"][]): RadarRow[] {
     const pairTotal = pairTotalByAxis[pc.type];
     return {
       axis: pc.type,
-      description: pc.description,
+      description: describe(pc.type),
       count,
       pairTotal,
       percent: pctWithinPair(count, pairTotal),
@@ -88,9 +102,13 @@ function buildRadarRows(testScores: PersonalityClass["type"][]): RadarRow[] {
 }
 
 export default function TestResultStats(props: TestResultStatsProps) {
+  const t = useT();
   const rows = useMemo(
-    () => buildRadarRows(props.testResult.testScores),
-    [props.testResult.testScores]
+    () =>
+      buildRadarRows(props.testResult.testScores, (letter) =>
+        t(DIM_KEY[letter])
+      ),
+    [props.testResult.testScores, t]
   );
   const totalQs = props.testResult.testScores.length;
 
@@ -121,20 +139,20 @@ export default function TestResultStats(props: TestResultStatsProps) {
         fontSize="lg"
         scrollMarginTop={8}
       >
-        维度得分
+        {t("statsDimensionTitle")}
       </Heading>
       <Text
         fontSize="xs"
         color="gray.600"
         textAlign="center"
       >
-        共 {totalQs} 题计分 · 各轴百分比 = 该倾向题数 / 与同对立组题数之和
+        {t("statsDimensionHint", { count: totalQs })}
       </Text>
       <Box
         w="full"
         h={{ base: "min(85vw, 320px)", lg: "280px" }}
         maxW="full"
-        aria-label="八维得分雷达图"
+        aria-label={t("statsRadarAria")}
       >
         <ResponsiveContainer width="100%" height="100%">
           <RadarChart
@@ -157,7 +175,7 @@ export default function TestResultStats(props: TestResultStatsProps) {
               axisLine={false}
             />
             <Radar
-              name="占比"
+              name={t("radarSeriesName")}
               dataKey="percent"
               stroke={RADAR_STROKE}
               fill={RADAR_FILL}

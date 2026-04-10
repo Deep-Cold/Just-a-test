@@ -2,6 +2,7 @@ import Head from "next/head";
 import { ReactNode } from "react";
 import { Flex } from "@chakra-ui/react";
 
+import AppMetaHead from "../common/app-meta-head";
 import Nav from "../common/nav";
 import Footer from "../common/footer";
 
@@ -12,12 +13,8 @@ interface MainLayoutProps {
 export default function MainLayout(props: MainLayoutProps) {
   return (
     <>
+      <AppMetaHead />
       <Head>
-        <title>理大音游人格测试设计</title>
-        <meta
-          name="description"
-          content="理大音游人格测试设计：P/E、S/M、A/I、C/B 四维度理大校园 × 音游主题问卷"
-        />
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1"

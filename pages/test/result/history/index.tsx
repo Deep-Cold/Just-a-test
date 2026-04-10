@@ -1,10 +1,15 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { Option, AsyncData, Result } from "@swan-io/boxed";
-import { Flex, Text } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
 
 import MainLayout from "../../../../components/layouts/main-layout";
 import TestResultHistory from "../../../../components/test/test-result-history";
+import {
+  PageErrorText,
+  PageLoadingText,
+  PageNoDataText,
+} from "../../../../components/test/result-status-texts";
 import {
   TestResult,
   getAllSavedTestResult,
@@ -30,15 +35,15 @@ export default function TestResultHistoryPage() {
   return (
     <MainLayout>
       {testResults.match({
-        NotAsked: () => <Text>Loading</Text>,
-        Loading: () => <Text>Loading</Text>,
+        NotAsked: () => <PageLoadingText />,
+        Loading: () => <PageLoadingText />,
         Done: (result) =>
           result.match({
-            Error: () => <Text>Something went wrong! Please refresh!</Text>,
+            Error: () => <PageErrorText />,
             Ok: (value) =>
               value.match({
                 Some: (data) => <TestResultHistory testResults={data} />,
-                None: () => <Text>No Data</Text>,
+                None: () => <PageNoDataText />,
               }),
           }),
       })}
