@@ -1,6 +1,13 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-}
+const repo = process.env.GITHUB_REPOSITORY?.split("/")[1] || "";
+const isProjectPage = repo && !repo.endsWith(".github.io");
+const basePath = isProjectPage ? `/${repo}` : "";
 
-module.exports = nextConfig
+const nextConfig = {
+  output: "export",
+  basePath,
+  assetPrefix: basePath,
+  images: { unoptimized: true },
+};
+
+module.exports = nextConfig;
