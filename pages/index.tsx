@@ -27,7 +27,7 @@ export default function HomePage() {
             textAlign="center"
           >
             <Highlight
-              query="MBTI Personality Test"
+              query="理大音游人格测试设计"
               styles={{
                 py: 1,
                 px: 4,
@@ -36,7 +36,7 @@ export default function HomePage() {
                 color: "white",
               }}
             >
-              Welcome to MBTI Personality Test
+              理大音游人格测试设计
             </Highlight>
           </Heading>
           <Text

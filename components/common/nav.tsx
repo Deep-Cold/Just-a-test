@@ -24,7 +24,7 @@ export default function Nav() {
           fontWeight="bold"
           textTransform="uppercase"
         >
-          MBTI Personality Test
+          理大音游人格测试设计
         </Button>
       </Link>
       <Link href="/test/result/history">

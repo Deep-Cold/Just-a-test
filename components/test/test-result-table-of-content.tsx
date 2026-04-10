@@ -48,7 +48,7 @@ export default function TestResultTableOfContent() {
       pos="sticky"
       alignSelf="flex-start"
     >
-      <Text fontWeight="bold">Table Of Content</Text>
+      <Text fontWeight="bold">目录</Text>
       <UnorderedList
         spacing={2}
         listStyleType="none"

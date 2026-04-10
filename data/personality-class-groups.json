@@ -1,6 +1,6 @@
 [
   {
-    "type": "ENFJ",
+    "type": "EMIC",
     "name": "Extraverted Intuitive Feeling Judging",
     "nameDescription": "Extraverted Feeling with Introverted Intuition",
     "epithet": "The Giver",
@@ -89,7 +89,7 @@
     ]
   },
   {
-    "type": "ENTJ",
+    "type": "PMIC",
     "name": "Extraverted Intuitive Thinking Judging",
     "nameDescription": "Extraverted Thinking with Introverted Intuition",
     "epithet": "The Executive",
@@ -193,7 +193,7 @@
     ]
   },
   {
-    "type": "ENFP",
+    "type": "EMIB",
     "name": "Extraverted Intuitive Feeling Perceiving",
     "nameDescription": "Extraverted Intuition with Introverted Feeling",
     "epithet": "The Inspirer",
@@ -288,7 +288,7 @@
     ]
   },
   {
-    "type": "ENTP",
+    "type": "PMIB",
     "name": "Extraverted Intuitive Thinking Perceiving",
     "nameDescription": "Extraverted Intuition with Introverted Thinking",
     "epithet": "The Visionary",
@@ -384,7 +384,7 @@
     ]
   },
   {
-    "type": "ESFJ",
+    "type": "EMAC",
     "name": "Extraverted Sensing Feeling Judging",
     "nameDescription": "Extraverted Feeling with Introverted Sensing",
     "epithet": "The Caregiver",
@@ -478,7 +478,7 @@
     ]
   },
   {
-    "type": "ESFP",
+    "type": "EMAB",
     "name": "Extraverted Sensing Feeling Perceiving",
     "nameDescription": "Extraverted Sensing with Introverted Feeling",
     "epithet": "The Performer",
@@ -579,7 +579,7 @@
     ]
   },
   {
-    "type": "ESTJ",
+    "type": "PMAC",
     "name": " Extraverted Sensing Thinking Judging",
     "nameDescription": "Extraverted Thinking with Introverted Sensing",
     "epithet": "The Guardian",
@@ -678,7 +678,7 @@
     ]
   },
   {
-    "type": "ESTP",
+    "type": "PMAB",
     "name": "Extraverted Sensing Thinking Perceiving",
     "nameDescription": "Extraverted Sensing with Introverted Thinking",
     "epithet": "The Doer",
@@ -779,7 +779,7 @@
     ]
   },
   {
-    "type": "INFJ",
+    "type": "ESIC",
     "name": "Introverted iNtuitive Feeling Judging",
     "nameDescription": "Introverted Intuition with Extraverted Feeling",
     "epithet": "The Protector",
@@ -877,7 +877,7 @@
     ]
   },
   {
-    "type": "INFP",
+    "type": "ESIB",
     "name": "Introverted Intuitive Feeling Perceiving",
     "nameDescription": "Introverted Feeling with Extraverted Intuition",
     "epithet": "The Idealist",
@@ -980,7 +980,7 @@
     ]
   },
   {
-    "type": "INTJ",
+    "type": "PSIC",
     "name": "Introverted Intuitive Thinking Judging",
     "nameDescription": "Introverted Intuition with Extraverted Thinking",
     "epithet": "The Scientist",
@@ -1081,7 +1081,7 @@
     ]
   },
   {
-    "type": "INTP",
+    "type": "PSIB",
     "name": "Introverted Intuitive Thinking Perceiving",
     "nameDescription": "Introverted Thinking with Extraverted Intuition",
     "epithet": "The Thinker",
@@ -1174,7 +1174,7 @@
     ]
   },
   {
-    "type": "ISFJ",
+    "type": "ESAC",
     "name": "Introverted Sensing Feeling Judging",
     "nameDescription": "Introverted Sensing with Extraverted Feeling",
     "epithet": "The Nurturer",
@@ -1275,7 +1275,7 @@
     ]
   },
   {
-    "type": "ISFP",
+    "type": "ESAB",
     "name": "Introverted Sensing Feeling Perceiving",
     "nameDescription": "Introverted Feeling with Extraverted Sensing",
     "epithet": "The Artist",
@@ -1381,7 +1381,7 @@
     ]
   },
   {
-    "type": "ISTJ",
+    "type": "PSAC",
     "name": "Introverted Sensing Thinking Judging",
     "nameDescription": "Introverted Sensing with Extraverted Thinking",
     "epithet": "The Duty Fulfiller",
@@ -1477,7 +1477,7 @@
     ]
   },
   {
-    "type": "ISTP",
+    "type": "PSAB",
     "name": "Introverted Sensing Thinking Perceiving",
     "nameDescription": "Introverted Thinking with Extraverted Sensing",
     "epithet": "The Mechanic",

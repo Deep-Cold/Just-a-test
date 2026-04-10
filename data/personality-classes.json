@@ -1,34 +1,34 @@
 [
   {
-    "type": "E",
-    "description": "Extroverted"
+    "type": "P",
+    "description": "精度至上 (P / Precision)"
   },
   {
-    "type": "I",
-    "description": "Introverted"
+    "type": "E",
+    "description": "表现至上 (E / Expression)"
   },
   {
     "type": "S",
-    "description": "Sensing"
+    "description": "独行侠 (S / Solitary)"
   },
   {
-    "type": "N",
-    "description": "Intuitive"
+    "type": "M",
+    "description": "社交达人 (M / Multi)"
   },
   {
-    "type": "T",
-    "description": "Thinking"
+    "type": "A",
+    "description": "逻辑分析 (A / Analytical)"
   },
   {
-    "type": "F",
-    "description": "Feeling"
+    "type": "I",
+    "description": "肌肉直觉 (I / Intuitive)"
   },
   {
-    "type": "P",
-    "description": "Perceiving"
+    "type": "C",
+    "description": "持久稳定 (C / Consistent)"
   },
   {
-    "type": "J",
-    "description": "Judging"
+    "type": "B",
+    "description": "瞬间爆发 (B / Burst)"
   }
 ]

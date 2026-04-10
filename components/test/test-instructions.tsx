@@ -16,29 +16,23 @@ export default function TestInstructions(props: TestInstructionsProps) {
     <Flex
       h="full"
       direction="column"
-      gap={8}
+      gap={6}
     >
-      <Heading>Instructions</Heading>
+      <Heading size="md">说明</Heading>
       <Flex
         direction="column"
-        gap={2}
+        gap={3}
       >
         <Text>
-          Completing the test should only take 15 minutes or so. Here is several
-          hints about how to complete this test:
+          本测试题库专为<strong>理大音游人</strong>定制。题目将理大的校园生活场景（如红砖墙、Z-Core、创新楼等）与主流音游（PJSK、Arcaea、maimai
+          等）的语境结合，仅供娱乐与自我觉察。
+        </Text>
+        <Text fontWeight="semibold">
+          请根据你的直觉选择 A 或 B。
         </Text>
         <UnorderedList spacing={2}>
-          <ListItem>
-            There are no right answers to any of these questions.
-          </ListItem>
-          <ListItem>
-            Answer the questions quickly, do not over-analyze them. Some seem
-            worded poorly. Go with what feels best.
-          </ListItem>
-          <ListItem>
-            Answer the questions as “the way you are”, not “the way you’d like
-            to be seen by others”.
-          </ListItem>
+          <ListItem>没有标准答案，按真实习惯选择即可。</ListItem>
+          <ListItem>不要过度纠结措辞，第一印象往往更准。</ListItem>
         </UnorderedList>
       </Flex>
       <Button
@@ -47,7 +41,7 @@ export default function TestInstructions(props: TestInstructionsProps) {
         alignSelf="flex-end"
         onClick={props.onCloseTestInstructions}
       >
-        Okay, I got it!
+        开始测试
       </Button>
     </Flex>
   );

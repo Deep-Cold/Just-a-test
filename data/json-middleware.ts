@@ -1,14 +1,40 @@
-import type {
-  PersonalityClass,
-  PersonalityClassGroup,
-  TestQuestion,
-} from "../lib/personality-test";
+import type { PersonalityClass, TestQuestion } from "../lib/personality-test";
+import type { PersonalityClassGroupType } from "../lib/personality-types";
+
+/** Legacy shape of `personality-class-groups.json`（仅用于校验旧 JSON，结果页已改用 result-archetypes） */
+export interface PersonalityClassGroup {
+  type: PersonalityClassGroupType;
+  name: string;
+  nameDescription: string;
+  epithet: string;
+  description: string;
+  jungianFunctionalPreference: {
+    dominant: string;
+    auxiliary: string;
+    tertiary: string;
+    inferior: string;
+  };
+  generalTraits: string[];
+  relationshipStrengths: string[];
+  relationshipWeaknesses: string[];
+  successDefinition: string;
+  strengths: string[];
+  gifts: string[];
+  potentialProblemAreas: string[];
+  explanationOfProblems: string;
+  solutions: string;
+  livingHappilyTips: string;
+  suggestions?: string[];
+  tenRulesToLive: string[];
+}
 
 type JsonRecord = Record<string, unknown>;
 
 const TEST_ANSWER_TYPES = new Set(["A", "B"]);
-const PERSONALITY_CLASS_TYPES = new Set(["E", "I", "S", "N", "T", "F", "P", "J"]);
-const PERSONALITY_CLASS_GROUP_PATTERN = /^[EI][SN][TF][JP]$/;
+/** P/E、S/M、A/I、C/B 八极 */
+const PERSONALITY_CLASS_TYPES = new Set(["P", "E", "S", "M", "A", "I", "C", "B"]);
+/** 四字母顺序：P/E → S/M → A/I → C/B */
+const PERSONALITY_CLASS_GROUP_PATTERN = /^[PE][MS][AI][CB]$/;
 
 function expectArray(value: unknown, path: string): unknown[] {
   if (!Array.isArray(value)) {
@@ -77,14 +103,14 @@ function expectPersonalityClassType(
 function expectPersonalityClassGroupType(
   value: unknown,
   path: string
-): PersonalityClassGroup["type"] {
+): PersonalityClassGroupType {
   const parsedValue = expectString(value, path);
 
   if (!PERSONALITY_CLASS_GROUP_PATTERN.test(parsedValue)) {
     throw new TypeError(`${path} must be a valid personality class group type`);
   }
 
-  return parsedValue as PersonalityClassGroup["type"];
+  return parsedValue as PersonalityClassGroupType;
 }
 
 export function buildPersonalityClasses(input: unknown): PersonalityClass[] {
@@ -116,6 +142,17 @@ export function buildPersonalityTest(input: unknown): TestQuestion[] {
         json.question,
         `personality-test.json[${index}].question`
       ),
+      excludeFromScore:
+        json.excludeFromScore === undefined
+          ? undefined
+          : Boolean(json.excludeFromScore),
+      supportFormUrl:
+        json.supportFormUrl === undefined
+          ? undefined
+          : expectString(
+              json.supportFormUrl,
+              `personality-test.json[${index}].supportFormUrl`
+            ),
       answerOptions: expectArray(
         json.answerOptions,
         `personality-test.json[${index}].answerOptions`

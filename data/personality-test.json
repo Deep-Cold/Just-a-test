@@ -1,1121 +1,531 @@
 [
   {
     "no": 1,
-    "question": "你知道的这是mygo: ",
+    "question": "【Project Sekai】在联机打歌时，你更在意：",
     "answerOptions": [
       {
         "type": "A",
-        "answer": "Interact with many, including strangers",
-        "score": "E"
+        "answer": "判定全都是 \"Perfect\"，哪怕错失了看 3DMV 的机会。",
+        "score": "P"
       },
       {
         "type": "B",
-        "answer": "Interact with a few, known to you",
-        "score": "I"
+        "answer": "欣赏精致的角色建模和舞台特效，心情愉悦比全完美更重要。",
+        "score": "E"
       }
     ]
   },
   {
     "no": 2,
-    "question": "Are you more: ",
+    "question": "【理大红砖墙】看到校园里整齐划一的红砖，你最先想到的是：",
     "answerOptions": [
       {
         "type": "A",
-        "answer": "Realistic than speculative",
-        "score": "S"
+        "answer": "这种几何对称感就像是 44 拍的谱面，每一块砖都必须严丝合缝。",
+        "score": "P"
       },
       {
         "type": "B",
-        "answer": "Speculative than realistic",
-        "score": "N"
+        "answer": "这种温暖的色调非常适合拍一张有氛围感的照片发到 IG。",
+        "score": "E"
       }
     ]
   },
   {
     "no": 3,
-    "question": "Is it worse to: ",
+    "question": "【maimai】当你在机厅打大圆盘时：",
     "answerOptions": [
       {
         "type": "A",
-        "answer": "Have your “head in the clouds”",
-        "score": "S"
+        "answer": "你的动作极其克制，只为了在那一毫秒内点中判定点。",
+        "score": "P"
       },
       {
         "type": "B",
-        "answer": "Be “in a rut”",
-        "score": "N"
+        "answer": "你的动作幅度很大，甚至带有舞蹈感，享受挥洒汗水的快感。",
+        "score": "E"
       }
     ]
   },
   {
     "no": 4,
-    "question": "Are you more impressed by: ",
+    "question": "【V-Building 摄影】在赛马会创新楼拍照，你更倾向：",
     "answerOptions": [
       {
         "type": "A",
-        "answer": "Principles",
-        "score": "T"
+        "answer": "调整所有参数，确保线条垂直，没有一点噪点。",
+        "score": "P"
       },
       {
         "type": "B",
-        "answer": "Emotions",
-        "score": "F"
+        "answer": "使用大胆的滤镜，追求构图带来的视觉冲击力。",
+        "score": "E"
       }
     ]
   },
   {
     "no": 5,
-    "question": "Are more drawn toward the: ",
+    "question": "【Chunithm】面对「抬手（Air）」音符，你的习惯是：",
     "answerOptions": [
       {
         "type": "A",
-        "answer": "Convincing",
-        "score": "T"
+        "answer": "手抬到刚刚好触发传感器的高度，保证稳准狠。",
+        "score": "P"
       },
       {
         "type": "B",
-        "answer": "Touching",
-        "score": "F"
+        "answer": "手挥得很高，享受那种仿佛在指挥管弦乐团的潇洒感。",
+        "score": "E"
       }
     ]
   },
   {
     "no": 6,
-    "question": "Do you prefer to work: ",
+    "question": "【理大学业】在做一份 Presentation 的 PPT 时，你：",
     "answerOptions": [
       {
         "type": "A",
-        "answer": "To deadlines",
-        "score": "J"
+        "answer": "强迫症般地对齐每一个像素和字体大小。",
+        "score": "P"
       },
       {
         "type": "B",
-        "answer": "Just “whenever”",
-        "score": "P"
+        "answer": "花大量时间寻找精美的配图和动效。",
+        "score": "E"
       }
     ]
   },
   {
     "no": 7,
-    "question": "Do you tend to choose: ",
+    "question": "【SDVX】当旋钮（Laser）交错时，你关注的是：",
     "answerOptions": [
       {
         "type": "A",
-        "answer": "Rather carefully",
-        "score": "J"
+        "answer": "蓝红线条是否完美重合，不掉一点判定。",
+        "score": "P"
       },
       {
         "type": "B",
-        "answer": "Somewhat impulsively",
-        "score": "P"
+        "answer": "屏幕上五光十色的霓虹特效和动感电音。",
+        "score": "E"
       }
     ]
   },
   {
     "no": 8,
-    "question": "At parties do you: ",
+    "question": "【BanG Dream!】抽取新卡面时，你的动力主要源于：",
     "answerOptions": [
       {
         "type": "A",
-        "answer": "Stay late, with increasing energy",
-        "score": "E"
+        "answer": "这张卡带来的属性加成，能让我更容易刷出高分。",
+        "score": "P"
       },
       {
         "type": "B",
-        "answer": "Leave early with decreased energy",
-        "score": "I"
+        "answer": "卡面立绘的精美程度以及角色的服装细节。",
+        "score": "E"
       }
     ]
   },
   {
     "no": 9,
-    "question": "Are you more attracted to: ",
+    "question": "【Arcaea】在推分遇到瓶颈时，你会：",
     "answerOptions": [
       {
         "type": "A",
-        "answer": "Sensible people",
+        "answer": "躲在理大图书馆的 Quiet Zone 独自反复练习。",
         "score": "S"
       },
       {
         "type": "B",
-        "answer": "Imaginative people",
-        "score": "N"
+        "answer": "去 Discord 频道或者线下机厅请教大佬怎么抓准节奏。",
+        "score": "M"
       }
     ]
   },
   {
     "no": 10,
-    "question": "Are you more interested in: ",
+    "question": "【校园选座】在理大午餐，你更倾向于：",
     "answerOptions": [
       {
         "type": "A",
-        "answer": "What is actual",
+        "answer": "找个角落快速吃完，顺便刷一局手机音游。",
         "score": "S"
       },
       {
         "type": "B",
-        "answer": "What is possible",
-        "score": "N"
+        "answer": "在 VA 咖啡厅和朋友边吃边聊，甚至现场来两局面基赛。",
+        "score": "M"
       }
     ]
   },
   {
     "no": 11,
-    "question": "In judging others are you more swayed by: ",
+    "question": "【太鼓达人】当你在机厅听到隔壁有人打鼓时：",
     "answerOptions": [
       {
         "type": "A",
-        "answer": "Laws than circumstances",
-        "score": "T"
+        "answer": "戴紧降噪耳机，继续沉浸在自己的谱面里。",
+        "score": "S"
       },
       {
         "type": "B",
-        "answer": "Circumstances than laws",
-        "score": "F"
+        "answer": "默默观察对方的指法，打完后可能会给对方一个肯定的眼神。",
+        "score": "M"
       }
     ]
   },
   {
     "no": 12,
-    "question": "In approaching others is your inclination to be somewhat: ",
+    "question": "【Project Sekai】每天的活动，你更喜欢：",
     "answerOptions": [
       {
         "type": "A",
-        "answer": "Objective",
-        "score": "T"
+        "answer": "一个人在 Solo Live 里安静地刷材料。",
+        "score": "S"
       },
       {
         "type": "B",
-        "answer": "Personal",
-        "score": "F"
+        "answer": "去 Multi-Live 匹配，享受大家一起发表情包互动的快乐。",
+        "score": "M"
       }
     ]
   },
   {
     "no": 13,
-    "question": "Are you more: ",
+    "question": "【理大社交】面对理大众多的 Society（社团）：",
     "answerOptions": [
       {
         "type": "A",
-        "answer": "Punctual",
-        "score": "J"
+        "answer": "只参加技术导向的兴趣小组。",
+        "score": "S"
       },
       {
         "type": "B",
-        "answer": "Leisurely",
-        "score": "P"
+        "answer": "喜欢参加大规模的迎新营 (O-Camp) 和聚会。",
+        "score": "M"
       }
     ]
   },
   {
     "no": 14,
-    "question": "Does it bother you more having things: ",
+    "question": "【Phigros】获得了一份惊人的成绩单，你会：",
     "answerOptions": [
       {
         "type": "A",
-        "answer": "Incomplete",
-        "score": "J"
+        "answer": "截图保存在相册里，作为自己的阶段性里程碑。",
+        "score": "S"
       },
       {
         "type": "B",
-        "answer": "Completed",
-        "score": "P"
+        "answer": "立刻转发到朋友圈或 PolyU Secrets，寻找同好交流。",
+        "score": "M"
       }
     ]
   },
   {
     "no": 15,
-    "question": "In your social groups do you: ",
+    "question": "【Cytus II】对于游戏的剧情（Lore）：",
     "answerOptions": [
       {
         "type": "A",
-        "answer": "Keep abreast of other’s happenings",
-        "score": "E"
+        "answer": "自己慢慢读，在内心构建世界观。",
+        "score": "S"
       },
       {
         "type": "B",
-        "answer": "Get behind on the news",
-        "score": "I"
+        "answer": "去各种社区参与理论讨论，分析剧情走向。",
+        "score": "M"
       }
     ]
   },
   {
     "no": 16,
-    "question": "In doing ordinary things are you more likely to: ",
+    "question": "【机厅氛围】如果有人在你的机位后围观你打歌：",
     "answerOptions": [
       {
         "type": "A",
-        "answer": "Do it the usual way",
+        "answer": "感到压力倍增，甚至想赶紧打完离开。",
         "score": "S"
       },
       {
         "type": "B",
-        "answer": "Do it your own way",
-        "score": "N"
+        "answer": "感觉充满了动力，表现欲瞬间爆棚。",
+        "score": "M"
       }
     ]
   },
   {
     "no": 17,
-    "question": "Writers should: ",
+    "question": "【谱面研究】面对高难曲目的交叉指法，你会：",
     "answerOptions": [
       {
         "type": "A",
-        "answer": "“Say what they mean and mean what they say”",
-        "score": "S"
+        "answer": "在 YouTube 找手元视频，逐帧慢放研究到底该出哪只手。",
+        "score": "A"
       },
       {
         "type": "B",
-        "answer": "Express things more by use of analogy",
-        "score": "N"
+        "answer": "直接上手打，多打几次让身体产生本能反应。",
+        "score": "I"
       }
     ]
   },
   {
     "no": 18,
-    "question": "Which appeals to you more: ",
+    "question": "【理大导航】在错综复杂的理大天桥找教室，你：",
     "answerOptions": [
       {
         "type": "A",
-        "answer": "Consistency of thought",
-        "score": "T"
+        "answer": "提前查看 PolyU Wayfinding App，规划最科学的路线。",
+        "score": "A"
       },
       {
         "type": "B",
-        "answer": "Harmonious human relationships",
-        "score": "F"
+        "answer": "凭感觉走，相信自己能找到红砖建筑里的逻辑。",
+        "score": "I"
       }
     ]
   },
   {
     "no": 19,
-    "question": "Are you more comfortable in making: ",
+    "question": "【Arcaea】面对反人类的「蛇（Arc）」，你：",
     "answerOptions": [
       {
         "type": "A",
-        "answer": "Logical judgments",
-        "score": "T"
+        "answer": "观察其位移轨迹的几何逻辑。",
+        "score": "A"
       },
       {
         "type": "B",
-        "answer": "Value judgments",
-        "score": "F"
+        "answer": "眼睛盯着 Note，手随心动，跟着音乐划动。",
+        "score": "I"
       }
     ]
   },
   {
     "no": 20,
-    "question": "Do you want things: ",
+    "question": "【期末预习】准备 Exam 时，你更倾向：",
     "answerOptions": [
       {
         "type": "A",
-        "answer": "Settled and decided",
-        "score": "J"
+        "answer": "整理详细的思维导图和历年 Past Paper。",
+        "score": "A"
       },
       {
         "type": "B",
-        "answer": "Unsettled and undecided",
-        "score": "P"
+        "answer": "抓住几个关键概念，然后靠临场发挥。",
+        "score": "I"
       }
     ]
   },
   {
     "no": 21,
-    "question": "Would you say you are more: ",
+    "question": "【SDVX】面对密集的旋钮+按键，你：",
     "answerOptions": [
       {
         "type": "A",
-        "answer": "Serious and determined",
-        "score": "J"
+        "answer": "将谱面拆解成简单的节奏块。",
+        "score": "A"
       },
       {
         "type": "B",
-        "answer": "Easy-going",
-        "score": "P"
+        "answer": "把它看成一种色彩和光影的流动，凭乐感去按。",
+        "score": "I"
       }
     ]
   },
   {
     "no": 22,
-    "question": "In phoning do you: ",
+    "question": "【Phigros】面对判定线乱跳、甚至旋转的谱面：",
     "answerOptions": [
       {
         "type": "A",
-        "answer": "Rarely question that it will all be said",
-        "score": "E"
+        "answer": "吐槽谱面逻辑，试图总结出其变化的规律。",
+        "score": "A"
       },
       {
         "type": "B",
-        "answer": "Rehearse what you’ll say",
+        "answer": "兴奋地接受挑战，享受这种混乱带来的新鲜感。",
         "score": "I"
       }
     ]
   },
   {
     "no": 23,
-    "question": "Facts: ",
+    "question": "【选课策略】在理大 Add/Drop Period 选课：",
     "answerOptions": [
       {
         "type": "A",
-        "answer": "“Speak for themselves”",
-        "score": "S"
+        "answer": "详细分析课程大纲、Workload 以及教授的 Grading 历史。",
+        "score": "A"
       },
       {
         "type": "B",
-        "answer": "Illustrate principles",
-        "score": "N"
+        "answer": "看课名顺眼或跟着感觉选，觉得好玩最重要。",
+        "score": "I"
       }
     ]
   },
   {
     "no": 24,
-    "question": "Are visionaries: ",
+    "question": "【Cytus】面对不断扫描的判定线：",
     "answerOptions": [
       {
         "type": "A",
-        "answer": "somewhat annoying",
-        "score": "S"
+        "answer": "数着节拍，精准预判下一次扫描的位置。",
+        "score": "A"
       },
       {
         "type": "B",
-        "answer": "rather fascinating",
-        "score": "N"
+        "answer": "跟着背景音乐的重音，在判定线经过时自然按下。",
+        "score": "I"
       }
     ]
   },
   {
     "no": 25,
-    "question": "Are you more often: ",
+    "question": "【打歌时长】你理想的练习状态是：",
     "answerOptions": [
       {
         "type": "A",
-        "answer": "a cool-headed person",
-        "score": "T"
+        "answer": "每天坚持打 1 小时，保持手感。",
+        "score": "C"
       },
       {
         "type": "B",
-        "answer": "a warm-hearted person",
-        "score": "F"
+        "answer": "平时不打，周末去机厅一口气爆肝 8 小时。",
+        "score": "B"
       }
     ]
   },
   {
     "no": 26,
-    "question": "Is it worse to be: ",
+    "question": "【理大 Deadline】面对期末大作业 (Project)：",
     "answerOptions": [
       {
         "type": "A",
-        "answer": "unjust",
-        "score": "T"
+        "answer": "提前三周开始，每天做一点，稳步推进。",
+        "score": "C"
       },
       {
         "type": "B",
-        "answer": "merciless",
-        "score": "F"
+        "answer": "最后 48 小时在图书馆通宵爆肝。",
+        "score": "B"
       }
     ]
   },
   {
     "no": 27,
-    "question": "Should one usually let events occur: ",
+    "question": "【Project Sekai】在进行排名活动（梯子）时：",
     "answerOptions": [
       {
         "type": "A",
-        "answer": "by careful selection and choice",
-        "score": "J"
+        "answer": "稳定输出，每天消耗掉定量的体力。",
+        "score": "C"
       },
       {
         "type": "B",
-        "answer": "randomly and by chance",
-        "score": "P"
+        "answer": "在活动最后几小时突然发力，疯狂嗑药冲榜。",
+        "score": "B"
       }
     ]
   },
   {
     "no": 28,
-    "question": "Do you feel better about: ",
+    "question": "【太鼓达人】面对长达 3 分钟的高 BPM 曲目：",
     "answerOptions": [
       {
         "type": "A",
-        "answer": "having purchased",
-        "score": "J"
+        "answer": "节奏平稳，体力分配均匀，直到最后一刻。",
+        "score": "C"
       },
       {
         "type": "B",
-        "answer": "having the option to buy",
-        "score": "P"
+        "answer": "前半段猛如虎，后半段体力不支开始手软。",
+        "score": "B"
       }
     ]
   },
   {
     "no": 29,
-    "question": "In company do you: ",
+    "question": "【理大通勤】从红磡站到教室迟到了，你会：",
     "answerOptions": [
       {
         "type": "A",
-        "answer": "initiate conversation",
-        "score": "E"
+        "answer": "保持快速步行，平稳通过连接天桥。",
+        "score": "C"
       },
       {
         "type": "B",
-        "answer": "wait to be approached",
-        "score": "I"
+        "answer": "直接开启「百米冲刺」模式，心跳飙升。",
+        "score": "B"
       }
     ]
   },
   {
     "no": 30,
-    "question": "Common sense is: ",
+    "question": "【Chunithm】在选曲时，你通常：",
     "answerOptions": [
       {
         "type": "A",
-        "answer": "rarely questionable",
-        "score": "S"
+        "answer": "选几首难度适中的曲子热身，再慢慢提升。",
+        "score": "C"
       },
       {
         "type": "B",
-        "answer": "frequently questionable",
-        "score": "N"
+        "answer": "上场第一首就选最难的，直接进入极限状态。",
+        "score": "B"
       }
     ]
   },
   {
     "no": 31,
-    "question": "Children often do not: ",
+    "question": "【理大生活压力】面对连轴转的 Mid-term：",
     "answerOptions": [
       {
         "type": "A",
-        "answer": "make themselves useful enough",
-        "score": "S"
+        "answer": "保持规律作息，通过慢节奏打歌减压。",
+        "score": "C"
       },
       {
         "type": "B",
-        "answer": "exercise their fantasy enough",
-        "score": "N"
+        "answer": "将所有压力转化为打高难曲时的暴力输出。",
+        "score": "B"
       }
     ]
   },
   {
     "no": 32,
-    "question": "In making decisions do you feel more comfortable with: ",
+    "question": "【maimai】遇到需要连续高速旋转的段落：",
     "answerOptions": [
       {
         "type": "A",
-        "answer": "standards",
-        "score": "T"
+        "answer": "控制呼吸和力度，保持均匀的旋转速度。",
+        "score": "C"
       },
       {
         "type": "B",
-        "answer": "feelings",
-        "score": "F"
+        "answer": "瞬间发力，把转盘转出火星。",
+        "score": "B"
       }
     ]
   },
   {
     "no": 33,
-    "question": "Are you more: ",
+    "excludeFromScore": true,
+    "question": "【不计入结果】如果你是理大的同学，请支持我们音游与偶像应援社团成立(๑•̀ㅂ•́)و✧。我们还需要一些电子签名：",
+    "supportFormUrl": "https://forms.office.com/pages/responsepage.aspx?id=1-QJ7A89_06cHnuoBgxUFwQ65cePsnRNqvo5heiTSI1UNkFSMTdQWTQxSDc1WUtETzlHTU43MENDNS4u&route=shorturl",
     "answerOptions": [
       {
         "type": "A",
-        "answer": "firm than gentle",
-        "score": "T"
-      },
-      {
-        "type": "B",
-        "answer": "gentle than firm",
-        "score": "F"
-      }
-    ]
-  },
-  {
-    "no": 34,
-    "question": "Which is more admirable: ",
-    "answerOptions": [
-      {
-        "type": "A",
-        "answer": "the ability to organize and be methodical",
-        "score": "J"
-      },
-      {
-        "type": "B",
-        "answer": "the ability to adapt and make do",
+        "answer": "已严肃支持并签名！",
         "score": "P"
-      }
-    ]
-  },
-  {
-    "no": 35,
-    "question": "Do you put more value on: ",
-    "answerOptions": [
-      {
-        "type": "A",
-        "answer": "infinite",
-        "score": "J"
       },
       {
         "type": "B",
-        "answer": "open-minded",
-        "score": "P"
-      }
-    ]
-  },
-  {
-    "no": 36,
-    "question": "Does new and non-routine interaction with others: ",
-    "answerOptions": [
-      {
-        "type": "A",
-        "answer": "stimulate and energize you",
+        "answer": "还要再犹豫一下(ó﹏ò｡)/不是理大学生捏",
         "score": "E"
-      },
-      {
-        "type": "B",
-        "answer": "tax your reserves",
-        "score": "I"
-      }
-    ]
-  },
-  {
-    "no": 37,
-    "question": "Are you more frequently: ",
-    "answerOptions": [
-      {
-        "type": "A",
-        "answer": "a practical sort of person",
-        "score": "S"
-      },
-      {
-        "type": "B",
-        "answer": "a fanciful sort of person",
-        "score": "N"
-      }
-    ]
-  },
-  {
-    "no": 38,
-    "question": "Are you more likely to: ",
-    "answerOptions": [
-      {
-        "type": "A",
-        "answer": "see how others are useful",
-        "score": "S"
-      },
-      {
-        "type": "B",
-        "answer": "see how others see",
-        "score": "N"
-      }
-    ]
-  },
-  {
-    "no": 39,
-    "question": "Which is more satisfying: ",
-    "answerOptions": [
-      {
-        "type": "A",
-        "answer": "to discuss an issue thoroughly",
-        "score": "T"
-      },
-      {
-        "type": "B",
-        "answer": "to arrive at agreement on an issue",
-        "score": "F"
-      }
-    ]
-  },
-  {
-    "no": 40,
-    "question": "Which rules you more: ",
-    "answerOptions": [
-      {
-        "type": "A",
-        "answer": "your head",
-        "score": "T"
-      },
-      {
-        "type": "B",
-        "answer": "your heart",
-        "score": "F"
-      }
-    ]
-  },
-  {
-    "no": 41,
-    "question": "Are you more comfortable with work that is: ",
-    "answerOptions": [
-      {
-        "type": "A",
-        "answer": "contracted",
-        "score": "J"
-      },
-      {
-        "type": "B",
-        "answer": "done on a casual basis",
-        "score": "P"
-      }
-    ]
-  },
-  {
-    "no": 42,
-    "question": "Do you tend to look for: ",
-    "answerOptions": [
-      {
-        "type": "A",
-        "answer": "the orderly",
-        "score": "J"
-      },
-      {
-        "type": "B",
-        "answer": "whatever turns up",
-        "score": "P"
-      }
-    ]
-  },
-  {
-    "no": 43,
-    "question": "Do you prefer: ",
-    "answerOptions": [
-      {
-        "type": "A",
-        "answer": "many friends with brief contact",
-        "score": "E"
-      },
-      {
-        "type": "B",
-        "answer": "a few friends with more lengthy contact",
-        "score": "I"
-      }
-    ]
-  },
-  {
-    "no": 44,
-    "question": "Do you go more by: ",
-    "answerOptions": [
-      {
-        "type": "A",
-        "answer": "facts",
-        "score": "S"
-      },
-      {
-        "type": "B",
-        "answer": "principles",
-        "score": "N"
-      }
-    ]
-  },
-  {
-    "no": 45,
-    "question": "Are you more interested in: ",
-    "answerOptions": [
-      {
-        "type": "A",
-        "answer": "production and distribution",
-        "score": "S"
-      },
-      {
-        "type": "B",
-        "answer": "design and research",
-        "score": "N"
-      }
-    ]
-  },
-  {
-    "no": 46,
-    "question": "Which is more of a compliment: ",
-    "answerOptions": [
-      {
-        "type": "A",
-        "answer": "“There is a very logical person”",
-        "score": "T"
-      },
-      {
-        "type": "B",
-        "answer": "“There is a very sentimental person”",
-        "score": "F"
-      }
-    ]
-  },
-  {
-    "no": 47,
-    "question": "Do you value in yourself more that you are: ",
-    "answerOptions": [
-      {
-        "type": "A",
-        "answer": "unwavering",
-        "score": "T"
-      },
-      {
-        "type": "B",
-        "answer": "devoted",
-        "score": "F"
-      }
-    ]
-  },
-  {
-    "no": 48,
-    "question": "Do you more often prefer the ",
-    "answerOptions": [
-      {
-        "type": "A",
-        "answer": "final and unalterable statement",
-        "score": "J"
-      },
-      {
-        "type": "B",
-        "answer": "tentative and preliminary statement",
-        "score": "P"
-      }
-    ]
-  },
-  {
-    "no": 49,
-    "question": "Are you more comfortable: ",
-    "answerOptions": [
-      {
-        "type": "A",
-        "answer": "after a decision",
-        "score": "J"
-      },
-      {
-        "type": "B",
-        "answer": "before a decision",
-        "score": "P"
-      }
-    ]
-  },
-  {
-    "no": 50,
-    "question": "Do you: ",
-    "answerOptions": [
-      {
-        "type": "A",
-        "answer": "speak easily and at length with strangers",
-        "score": "E"
-      },
-      {
-        "type": "B",
-        "answer": "find little to say to strangers",
-        "score": "I"
-      }
-    ]
-  },
-  {
-    "no": 51,
-    "question": "Are you more likely to trust your: ",
-    "answerOptions": [
-      {
-        "type": "A",
-        "answer": "experience",
-        "score": "S"
-      },
-      {
-        "type": "B",
-        "answer": "hunch",
-        "score": "N"
-      }
-    ]
-  },
-  {
-    "no": 52,
-    "question": "Do you feel: ",
-    "answerOptions": [
-      {
-        "type": "A",
-        "answer": "more practical than ingenious",
-        "score": "S"
-      },
-      {
-        "type": "B",
-        "answer": "more ingenious than practical",
-        "score": "N"
-      }
-    ]
-  },
-  {
-    "no": 53,
-    "question": "Which person is more to be complimented – one of: ",
-    "answerOptions": [
-      {
-        "type": "A",
-        "answer": "clear reason",
-        "score": "T"
-      },
-      {
-        "type": "B",
-        "answer": "strong feeling",
-        "score": "F"
-      }
-    ]
-  },
-  {
-    "no": 54,
-    "question": "Are you inclined more to be: ",
-    "answerOptions": [
-      {
-        "type": "A",
-        "answer": "fair-minded",
-        "score": "T"
-      },
-      {
-        "type": "B",
-        "answer": "sympathetic",
-        "score": "F"
-      }
-    ]
-  },
-  {
-    "no": 55,
-    "question": "Is it preferable mostly to: ",
-    "answerOptions": [
-      {
-        "type": "A",
-        "answer": "make sure things are arranged",
-        "score": "J"
-      },
-      {
-        "type": "B",
-        "answer": "just let things happen",
-        "score": "P"
-      }
-    ]
-  },
-  {
-    "no": 56,
-    "question": "In relationships should most things be: ",
-    "answerOptions": [
-      {
-        "type": "A",
-        "answer": "re-negotiable",
-        "score": "J"
-      },
-      {
-        "type": "B",
-        "answer": "random and circumstantial",
-        "score": "P"
-      }
-    ]
-  },
-  {
-    "no": 57,
-    "question": "When the phone rings do you: ",
-    "answerOptions": [
-      {
-        "type": "A",
-        "answer": "hasten to get to it first",
-        "score": "E"
-      },
-      {
-        "type": "B",
-        "answer": "hope someone else will answer",
-        "score": "I"
-      }
-    ]
-  },
-  {
-    "no": 58,
-    "question": "Do you prize more in yourself: ",
-    "answerOptions": [
-      {
-        "type": "A",
-        "answer": "a strong sense of reality",
-        "score": "S"
-      },
-      {
-        "type": "B",
-        "answer": "a vivid imagination",
-        "score": "N"
-      }
-    ]
-  },
-  {
-    "no": 59,
-    "question": "Are you drawn more to: ",
-    "answerOptions": [
-      {
-        "type": "A",
-        "answer": "fundamentals",
-        "score": "S"
-      },
-      {
-        "type": "B",
-        "answer": "overtones",
-        "score": "N"
-      }
-    ]
-  },
-  {
-    "no": 60,
-    "question": "Which seems the greater error: ",
-    "answerOptions": [
-      {
-        "type": "A",
-        "answer": "to be too passionate",
-        "score": "T"
-      },
-      {
-        "type": "B",
-        "answer": "to be too objective",
-        "score": "F"
-      }
-    ]
-  },
-  {
-    "no": 61,
-    "question": "Do you see yourself as basically: ",
-    "answerOptions": [
-      {
-        "type": "A",
-        "answer": "hard-headed",
-        "score": "T"
-      },
-      {
-        "type": "B",
-        "answer": "soft-hearted",
-        "score": "F"
-      }
-    ]
-  },
-  {
-    "no": 62,
-    "question": "Which situation appeals to you more: ",
-    "answerOptions": [
-      {
-        "type": "A",
-        "answer": "the structured and scheduled",
-        "score": "J"
-      },
-      {
-        "type": "B",
-        "answer": "the unstructured and unscheduled",
-        "score": "P"
-      }
-    ]
-  },
-  {
-    "no": 63,
-    "question": "Are you a person that is more: ",
-    "answerOptions": [
-      {
-        "type": "A",
-        "answer": "routinized than whimsical",
-        "score": "J"
-      },
-      {
-        "type": "B",
-        "answer": "whimsical than routinized",
-        "score": "P"
-      }
-    ]
-  },
-  {
-    "no": 64,
-    "question": "Are you more inclined to be: ",
-    "answerOptions": [
-      {
-        "type": "A",
-        "answer": "easy to approach",
-        "score": "E"
-      },
-      {
-        "type": "B",
-        "answer": "somewhat reserved",
-        "score": "I"
-      }
-    ]
-  },
-  {
-    "no": 65,
-    "question": "In writings do you prefer: ",
-    "answerOptions": [
-      {
-        "type": "A",
-        "answer": "the more literal",
-        "score": "S"
-      },
-      {
-        "type": "B",
-        "answer": "the more figurative",
-        "score": "N"
-      }
-    ]
-  },
-  {
-    "no": 66,
-    "question": "Is it harder for you to: ",
-    "answerOptions": [
-      {
-        "type": "A",
-        "answer": "identify with others",
-        "score": "S"
-      },
-      {
-        "type": "B",
-        "answer": "utilize others",
-        "score": "N"
-      }
-    ]
-  },
-  {
-    "no": 67,
-    "question": "Which do you wish more for yourself: ",
-    "answerOptions": [
-      {
-        "type": "A",
-        "answer": "clarity of reason",
-        "score": "T"
-      },
-      {
-        "type": "B",
-        "answer": "strength of compassion",
-        "score": "F"
-      }
-    ]
-  },
-  {
-    "no": 68,
-    "question": "Which is the greater fault: ",
-    "answerOptions": [
-      {
-        "type": "A",
-        "answer": "being indiscriminate",
-        "score": "T"
-      },
-      {
-        "type": "B",
-        "answer": "being critical",
-        "score": "F"
-      }
-    ]
-  },
-  {
-    "no": 69,
-    "question": "Do you prefer the: ",
-    "answerOptions": [
-      {
-        "type": "A",
-        "answer": "planned event",
-        "score": "J"
-      },
-      {
-        "type": "B",
-        "answer": "unplanned event",
-        "score": "P"
-      }
-    ]
-  },
-  {
-    "no": 70,
-    "question": "Do you tend to be more: ",
-    "answerOptions": [
-      {
-        "type": "A",
-        "answer": "deliberate than spontaneous",
-        "score": "J"
-      },
-      {
-        "type": "B",
-        "answer": "spontaneous than deliberate",
-        "score": "P"
       }
     ]
   }

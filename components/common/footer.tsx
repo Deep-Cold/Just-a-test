@@ -1,5 +1,4 @@
-import Link from "next/link";
-import { Flex, Text, Button } from "@chakra-ui/react";
+import { Flex, Text, Link } from "@chakra-ui/react";
 
 export default function Footer() {
   return (
@@ -13,19 +12,36 @@ export default function Footer() {
       direction="column"
       justifyContent="center"
       alignItems="center"
+      px={2}
+      textAlign="center"
     >
-      <Text>
+      <Text fontSize="sm">
         🔨 Made by{" "}
         <Link
-          href="https://github.com/rauf-21"
-          target="_blank"
+          href="https://github.com/Deep-Cold"
+          isExternal
+          color="primary.300"
+          fontWeight="semibold"
         >
-          <Button
-            colorScheme="primary"
-            variant="link"
-          >
-            rauf-21
-          </Button>
+          Deep-Cold
+        </Link>{" "}
+        and{" "}
+        <Link
+          href="https://github.com/shiguangWilliam"
+          isExternal
+          color="primary.300"
+          fontWeight="semibold"
+        >
+          shiguangWilliam
+        </Link>{" "}
+        based on the work of{" "}
+        <Link
+          href="https://github.com/rauf-21"
+          isExternal
+          color="primary.300"
+          fontWeight="semibold"
+        >
+          rauf-21
         </Link>
       </Text>
     </Flex>

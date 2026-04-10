@@ -13,10 +13,10 @@ export default function MainLayout(props: MainLayoutProps) {
   return (
     <>
       <Head>
-        <title>MBTI Personality Test</title>
+        <title>理大音游人格测试设计</title>
         <meta
           name="description"
-          content="MBTI Personality Test"
+          content="理大音游人格测试设计：P/E、S/M、A/I、C/B 四维度理大校园 × 音游主题问卷"
         />
         <meta
           name="viewport"

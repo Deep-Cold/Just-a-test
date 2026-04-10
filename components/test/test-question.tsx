@@ -1,11 +1,13 @@
 import { useRouter } from "next/router";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import {
   useRadioGroup,
   Flex,
   Text,
   Button,
   Box,
+  Spinner,
+  Link,
 } from "@chakra-ui/react";
 
 import TestProgress from "./test-progress";
@@ -15,11 +17,45 @@ import { personalityTest } from "../../data/personality-test";
 import {
   TestAnswerOption as TestAnswer,
   getQuestionAnswerScore,
+  isScoredQuestion,
   saveTestResult,
 } from "../../lib/personality-test";
 import useUserTestAnswersStore from "../../store/use-user-test-answers";
 
-function TestQuestionBlock({ questionIndex }: { questionIndex: number }) {
+function shuffleArrayInPlace<T>(arr: T[]): T[] {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+/** 仅打乱「计分题」在题库中的下标顺序 */
+function shuffleScoredQuestionIndices(): number[] {
+  const scored = personalityTest
+    .map((q, i) => (isScoredQuestion(q) ? i : -1))
+    .filter((i): i is number => i >= 0);
+  return shuffleArrayInPlace([...scored]);
+}
+
+/** 每题两个选项在界面上的显示顺序（索引 0/1 指向 answerOptions） */
+function randomOptionOrders(
+  questionCount: number
+): [number, number][] {
+  return Array.from({ length: questionCount }, () =>
+    Math.random() < 0.5 ? ([0, 1] as [number, number]) : ([1, 0] as [number, number])
+  );
+}
+
+function TestQuestionBlock({
+  questionIndex,
+  displayNumber,
+  optionOrder,
+}: {
+  questionIndex: number;
+  displayNumber: number;
+  optionOrder: readonly [number, number];
+}) {
   const question = personalityTest[questionIndex];
   const { userTestAnswers, setUserTestAnswers } = useUserTestAnswersStore();
   const selected = userTestAnswers[questionIndex];
@@ -47,31 +83,57 @@ function TestQuestionBlock({ questionIndex }: { questionIndex: number }) {
   return (
     <Box
       as="section"
+      w="full"
       py={6}
       borderBottomWidth="1px"
       borderColor="gray.200"
       _last={{ borderBottomWidth: 0 }}
       scrollMarginTop="5rem"
     >
-      <Text
-        fontWeight="bold"
-        color="gray.600"
+      <Flex
+        direction="column"
+        w="full"
+        alignItems="stretch"
+        gap={2}
       >
-        #{questionIndex + 1}
-      </Text>
-      <Text
-        fontSize="lg"
-        mb={4}
-      >
-        {question.question}
-      </Text>
+        <Text
+          fontWeight="bold"
+          color="gray.600"
+          textAlign="left"
+          w="full"
+        >
+          #{displayNumber}
+        </Text>
+        <Text
+          fontSize="lg"
+          mb={2}
+          textAlign="left"
+          w="full"
+        >
+          {question.question}
+        </Text>
+        {question.supportFormUrl ? (
+          <Link
+            href={question.supportFormUrl}
+            isExternal
+            color="primary.600"
+            fontWeight="semibold"
+            wordBreak="break-all"
+            mb={2}
+          >
+            {question.supportFormUrl}
+          </Link>
+        ) : null}
+      </Flex>
       <Flex
         w="full"
         gap={4}
         direction="column"
+        alignItems="stretch"
         {...group}
       >
-        {question.answerOptions.map((answerOption) => {
+        {optionOrder.map((optionIdx) => {
+          const answerOption = question.answerOptions[optionIdx];
           const radio = getRadioProps({ value: answerOption.type });
 
           return (
@@ -93,6 +155,20 @@ export default function TestQuestion() {
 
   const { userTestAnswers, setUserTestAnswers } = useUserTestAnswersStore();
 
+  const [testLayout, setTestLayout] = useState<{
+    displayOrder: number[];
+    optionOrders: [number, number][];
+  } | null>(null);
+
+  useEffect(() => {
+    queueMicrotask(() => {
+      setTestLayout({
+        displayOrder: shuffleScoredQuestionIndices(),
+        optionOrders: randomOptionOrders(personalityTest.length),
+      });
+    });
+  }, []);
+
   const allAnswered = personalityTest.every(
     (_, i) => userTestAnswers[i] !== undefined
   );
@@ -101,11 +177,14 @@ export default function TestQuestion() {
     if (!allAnswered) return;
 
     const timestamp = Date.now();
-    const testAnswers = personalityTest.map(
-      (_, i) => userTestAnswers[i] as TestAnswer["type"]
+    const scoredRows = personalityTest
+      .map((q, i) => ({ q, i }))
+      .filter(({ q }) => isScoredQuestion(q));
+    const testAnswers = scoredRows.map(
+      ({ i }) => userTestAnswers[i] as TestAnswer["type"]
     );
-    const testScores = personalityTest.map((_, index) =>
-      getQuestionAnswerScore(index + 1, testAnswers[index])
+    const testScores = scoredRows.map(({ q, i }) =>
+      getQuestionAnswerScore(q.no, userTestAnswers[i] as TestAnswer["type"])
     );
 
     saveTestResult({
@@ -148,13 +227,42 @@ export default function TestQuestion() {
       <Flex
         direction="column"
         w="full"
+        alignItems="stretch"
+        minH={testLayout ? undefined : "40vh"}
+        justifyContent={testLayout ? undefined : "center"}
       >
-        {personalityTest.map((_, questionIndex) => (
-          <TestQuestionBlock
-            key={questionIndex}
-            questionIndex={questionIndex}
+        {testLayout === null ? (
+          <Spinner
+            size="xl"
+            color="primary.500"
+            thickness="4px"
+            label="加载题目与选项顺序"
           />
-        ))}
+        ) : (
+          <>
+            {testLayout.displayOrder.map((questionIndex, position) => (
+              <TestQuestionBlock
+                key={questionIndex}
+                questionIndex={questionIndex}
+                displayNumber={position + 1}
+                optionOrder={testLayout.optionOrders[questionIndex]}
+              />
+            ))}
+            {personalityTest
+              .map((q, i) => ({ q, i }))
+              .filter(({ q }) => q.excludeFromScore)
+              .map(({ i }, bonusIdx) => (
+                <TestQuestionBlock
+                  key={`bonus-${i}`}
+                  questionIndex={i}
+                  displayNumber={
+                    testLayout.displayOrder.length + 1 + bonusIdx
+                  }
+                  optionOrder={testLayout.optionOrders[i]}
+                />
+              ))}
+          </>
+        )}
       </Flex>
 
       <Box
