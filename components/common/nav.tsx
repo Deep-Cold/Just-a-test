@@ -13,6 +13,9 @@ export default function Nav() {
       justifyContent="space-between"
       alignItems="center"
       overflowX="hidden"
+      bg="white"
+      borderBottomWidth="1px"
+      borderColor="gray.100"
     >
       <Link href="/">
         <Button

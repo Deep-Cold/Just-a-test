@@ -15,7 +15,6 @@ export default function TestInstructions(props: TestInstructionsProps) {
   return (
     <Flex
       h="full"
-      px={4}
       direction="column"
       gap={8}
     >

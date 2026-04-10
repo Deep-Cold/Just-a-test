@@ -33,7 +33,10 @@ export default function MainLayout(props: MainLayoutProps) {
         w="100%"
         minH="calc(100vh - 80px)"
         justifyContent="center"
-        alignItems="center"
+        alignItems="flex-start"
+        py={{ base: 4, md: 8 }}
+        px={{ base: 0, sm: 4, md: 6 }}
+        bg="gray.50"
       >
         {props.children}
       </Flex>

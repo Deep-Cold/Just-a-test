@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Flex } from "@chakra-ui/react";
+import { Flex, Box } from "@chakra-ui/react";
 
 import TestMenu from "./test-menu";
 import TestInstructions from "./test-instructions";
@@ -18,33 +18,37 @@ export default function TestDisplay() {
 
   return (
     <Flex
-      alignSelf="flex-start"
+      alignSelf="stretch"
       w="full"
-      h="full"
       direction="column"
+      alignItems="stretch"
       justifyContent="center"
-      alignItems="center"
-      gap={2}
-      px={1}
     >
-      <TestMenu
-        onShowInstructionsButtonClick={handleShowInstructionsButtonClick}
-      />
-      <Flex
-        w={{
-          lg: "50%",
-          base: "100%",
-        }}
-        h="full"
+      <Box
+        w="full"
+        maxW={{ base: "100%", sm: "min(100%, 36rem)", lg: "min(100%, 42rem)" }}
+        mx="auto"
+        bg="white"
+        borderRadius={{ base: "none", sm: "2xl" }}
+        borderWidth={{ base: "0", sm: "1px" }}
+        borderColor="gray.100"
+        boxShadow={{ base: "none", sm: "md" }}
+        px={{ base: 4, sm: 6, md: 8 }}
+        py={{ base: 5, md: 8 }}
       >
-        {showTestInstructions ? (
-          <TestInstructions
-            onCloseTestInstructions={handleCloseTestInstructions}
-          />
-        ) : (
-          <TestQuestion />
-        )}
-      </Flex>
+        <TestMenu
+          onShowInstructionsButtonClick={handleShowInstructionsButtonClick}
+        />
+        <Flex w="full">
+          {showTestInstructions ? (
+            <TestInstructions
+              onCloseTestInstructions={handleCloseTestInstructions}
+            />
+          ) : (
+            <TestQuestion />
+          )}
+        </Flex>
+      </Box>
     </Flex>
   );
 }
