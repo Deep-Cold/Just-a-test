@@ -29,6 +29,7 @@ const zhHans = {
   resultTableName: "名称",
   resultTableDesc: "描述",
   resultTableSoul: "对应的理大灵魂",
+  resultArchetypeImageAlt: "{type} · {name} 人格结果图鉴",
   resultSurvivalTitle: "给你的理大生存建议",
   statsDimensionTitle: "维度得分",
   statsDimensionHint:
@@ -105,6 +106,7 @@ const zhHant = {
   resultTableName: "名稱",
   resultTableDesc: "描述",
   resultTableSoul: "對應的理大靈魂",
+  resultArchetypeImageAlt: "{type} · {name} 人格結果圖鑑",
   resultSurvivalTitle: "給你的理大生存建議",
   statsDimensionTitle: "維度得分",
   statsDimensionHint:

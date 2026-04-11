@@ -13,7 +13,9 @@ import {
   UnorderedList,
   ListItem,
   Link,
+  Image,
 } from "@chakra-ui/react";
+import { useRouter } from "next/router";
 
 import {
   TestResult as ITestResult,
@@ -42,6 +44,7 @@ const DIMENSION_RECAP_KEYS = [
 ] as const;
 
 export default function TestResult(props: TestResultProps) {
+  const { basePath } = useRouter();
   const t = useT();
   const localizeBody = useLocalizeBody();
   const archetype = getPersonalityClassGroupByTestScores(
@@ -112,21 +115,26 @@ export default function TestResult(props: TestResultProps) {
       </Heading>
 
       <Box
-        w={200}
-        h={200}
-        borderRadius="xl"
-        bg="primary.50"
-        display="flex"
-        alignItems="center"
-        justifyContent="center"
-        fontSize="3xl"
-        fontWeight="bold"
-        color="primary.600"
-        flexShrink={0}
+        w="full"
+        maxW="md"
         alignSelf="center"
-        aria-hidden
+        rounded="xl"
+        overflow="hidden"
+        borderWidth="1px"
+        borderColor="primary.200"
+        bg="primary.50"
       >
-        {archetype.type}
+        <Image
+          src={`${basePath}/images/PMTI/${archetype.type}.png`}
+          alt={t("resultArchetypeImageAlt", {
+            type: archetype.type,
+            name: nameZh,
+          })}
+          w="full"
+          maxH={{ base: "280px", md: "400px" }}
+          objectFit="contain"
+          objectPosition="center top"
+        />
       </Box>
 
       <Heading

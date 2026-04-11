@@ -14,7 +14,7 @@ export const POLYU_SURVIVAL_TIPS: Record<
   PSAC: {
     trait: "极其严谨，抗压性强，逻辑严密。",
     survival:
-      "你是理大最稳的一块砖。但请注意，生活不是只有 AP（All Perfect）。建议偶尔走出 LKS 图书馆的 Quiet Zone，去 VA 喝杯咖啡，接受一点「不确定性」。",
+      "你是理大最稳的一块砖。但请注意，生活不是只有 AP（All Perfect）。建议偶尔走出图书馆的 Quiet Zone，去 VA 喝杯咖啡，接受一点「不确定性」。",
     pitfall: "别在 Group Project 里因为组员对齐不了像素而破防。",
   },
   PSAB: {

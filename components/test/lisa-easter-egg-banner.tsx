@@ -9,7 +9,7 @@ export default function LisaEasterEggBanner() {
   const { basePath } = useRouter();
   const t = useT();
   const localizeBody = useLocalizeBody();
-  const imageSrc = `${basePath}/images/mbti/lisa!!!.png`;
+  const imageSrc = `${basePath}/images/lisa.png`;
 
   return (
     <Box
